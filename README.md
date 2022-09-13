@@ -1,4 +1,5 @@
 # Ex-01_DS_Data_Cleansing
+
 # AIM
 To read the given data and perform data cleaning and save the cleaned data to a file.
 
@@ -18,5 +19,74 @@ Remove the null values from the data
 ## STEP 4
 Save the Clean data to the file
 
-# CODE
-# OUPUT
+
+```
+# CODE:
+
+import pandas as pd
+df=pd.read_csv("Data_set.csv")
+df.head(5)
+
+df.info()
+
+df.isnull()
+
+df.isnull().sum()
+
+df['show_name']=df['show_name'].fillna(df['aired_on'].mode()[0])
+df['aired_on']=df['aired_on'].fillna(df['aired_on'].mode()[0])
+df['original_network']=df['original_network'].fillna(df['aired_on'].mode()[0])
+df.head()
+
+df['rating']df['rating'].fillna(df['rating'].mean())
+df['current_overall _rank']=df['current_overall_rank'].fillna(df['current_overall_rank'].mean())
+df.head()
+
+df['watchers']=df['watchers'].fillna(df['watchers'].median())
+df.head()
+
+df.info()
+
+df.isnull().sum()
+
+```
+
+# OUPUT:
+
+DATA:
+
+![output](./1.png)
+
+![output](./2.png)
+
+![output](./3.png)
+
+NON NULL BEFORE:
+
+![output](./4.png)
+
+MODE:
+
+![output](./5.png)
+
+MEAN:
+
+![output](./6.png)
+
+MEDIAN:
+
+![output](./7.png)
+
+![output](./8.png)
+
+NON NULL AFTER:
+
+![output](./9.png)
+
+
+
+
+# RESULT:
+Thus the given data is read,cleansed and cleaned data is saved into the file.
+
+
